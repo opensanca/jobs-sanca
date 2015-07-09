@@ -1,0 +1,2 @@
+Router.route '/', ->
+  @redirect '/jobs'

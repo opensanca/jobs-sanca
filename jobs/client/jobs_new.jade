@@ -1,0 +1,45 @@
+template(name="jobsNew")
+  .row
+    .col-sm-6.col-sm-offset-3
+      .panel.panel-default
+        .panel-heading.clearfix
+          h3.panel-title.pull-left
+            | Anunciar Vaga
+        .modal-body
+
+          form        
+
+            .form-group
+              label.control-label(for='title') Título da Vaga
+              i.fa.fa-asterisk
+              input.form-control(id="title" type='text')
+                
+            .form-group
+              label.control-label(for='term') Tipo
+              i.fa.fa-asterisk
+              select.form-control(id="term")
+                option
+                option
+                  | Full Time
+                option
+                  | Estágio
+                option
+                  | Por Hora
+                option
+                  | Open Source
+                option
+                  | Voluntário
+                
+            .form-group
+              label.control-label(for='company') Empresa
+              input.form-control(id="company" type='text')
+
+            
+            .form-group
+              label.control-label(for='company') Descrição
+              .summernote(id="description")
+
+            
+        
+        .panel-footer.clearfix
+          input.btn.btn-primary.btn-save.pull-right(type="submit" value="Salvar")

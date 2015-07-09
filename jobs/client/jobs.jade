@@ -1,0 +1,18 @@
+template(name="jobs")
+  .row
+    .col-sm-12
+      h3
+        | Vagas Disponíveis
+      each jobs
+        .panel.panel-default
+          .panel-heading.clearfix
+            h3.panel-title.pull-left
+              | {{title}}
+          .modal-body
+              | {{description}}
+            
+          .panel-footer.clearfix
+            | {{createdAt}}
+      else
+        .well
+          | Nenhuma vaga aberta no momento
