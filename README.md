@@ -2,17 +2,22 @@
 
 Aplicação que vai ser feita  para que empresas e desenvolvedores possam encontrar e divulgar vagas de emprego.
 
+Deploy em: http://jobs-sanca.meteor.com/jobs
 
-#backend
--python
--django
+MeteorJS
 
-#frontend
--angular
--css3
--html5
--jquery
--bootstrap
+Referência: 
+http://www.weworkmeteor.com/
+https://github.com/nate-strauser/wework
 
-#database
--postgresql
+Todo:
+- [x] Setup inicial do projeto
+- [x] Começar a Todo List
+- [ ] Controle de acesso (https://atmospherejs.com/useraccounts/bootstrap)
+- [ ] Expirar posts depois de um tempo
+- [ ] Usuários com roles para moderar posts
+- [ ] Busca
+- [ ] Votação
+- [ ] Perfis de profissionais
+- [ ] Mapas
+- [ ] Terminar a Todo List
