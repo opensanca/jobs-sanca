@@ -3,18 +3,34 @@ template(name="navbar")
   .navbar.navbar-default.navbar-fixed-top(role='navigation')
     .container
       a.navbar-brand(title='jobs-sanca', href='/') Jobs Sanca
-      .navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li
-            a(href='/jobs')
-              i.fa.fa-fw.fa-newspaper-o
-              |  Vagas Disponíveis
-          li
-            a(href='/jobs/new')
-              i.fa.fa-fw.fa-bullhorn
-              |  Anunciar Vaga
-
-
+      ul.nav.navbar-nav
+        li
+          a(href='/jobs')
+            i.fa.fa-fw.fa-newspaper-o
+            |  Vagas Disponíveis
+        li
+          a(href='/jobs/new')
+            i.fa.fa-fw.fa-bullhorn
+            |  Anunciar Vaga
+      ul.nav.navbar-nav.navbar-right
+        li
+        li
+          if currentUser
+            a.dropdown(href='#' data-toggle='dropdown')
+              img.profile-image.img-circle(src="{{currentUser.profile.pictureUrl}}")
+              | {{currentUser.profile.firstName}} {{currentUser.profile.lastName}}
+              span.caret
+            ul.dropdown-menu
+              li
+                a.btn-logout(href='#') 
+                  i.fa.fa-fw.fa-sign-out
+                  | Sair
+          else
+            .navbar-btn
+              a.btn.btn-default.btn-linkedin(href='#')
+                i.fa.fa-fw.fa-linkedin
+                |  Entrar usando LinkedIn
+            
 template(name="layout")
   +navbar
   .container

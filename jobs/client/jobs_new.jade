@@ -1,4 +1,18 @@
+template(name="jobsNewForbidden")
+  .well.text-center
+    p
+      | Você precisa estar logado para criar um anúncio de emprego!
+    a.btn.btn-lg.btn-default.btn-linkedin(href="#")
+      i.fa.fa-fw.fa-linkedin
+      |  Entrar usando LinkedIn
+      
 template(name="jobsNew")
+  if currentUser
+    +jobsNewContent
+  else
+    +jobsNewForbidden
+  
+template(name="jobsNewContent")
   .row
     .col-sm-6.col-sm-offset-3
       .panel.panel-default
@@ -33,13 +47,10 @@ template(name="jobsNew")
             .form-group
               label.control-label(for='company') Empresa
               input.form-control(id="company" type='text')
-
             
             .form-group
               label.control-label(for='company') Descrição
               .summernote(id="description")
-
-            
         
         .panel-footer.clearfix
           input.btn.btn-primary.btn-save.pull-right(type="submit" value="Salvar")

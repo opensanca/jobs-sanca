@@ -13,11 +13,7 @@ mquandalle:stylus
 fortawesome:fontawesome
 accounts-base
 accounts-ui
-accounts-password
-accounts-facebook
-accounts-google
-accounts-github
-useraccounts:bootstrap
 summernote:summernote
 mizzao:bootboxjs
 duongthienduc:meteor-bootstrap-growl
+pauli:accounts-linkedin

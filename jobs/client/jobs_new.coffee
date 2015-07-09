@@ -2,7 +2,7 @@ Router.route '/jobs/new', ->
   @layout 'layout'
   @render 'jobsNew'
 
-Template.jobsNew.onRendered ->
+Template.jobsNewContent.onRendered ->
   @$(".summernote").summernote
     type: 'summernote'
     height: 300
@@ -15,7 +15,7 @@ Template.jobsNew.onRendered ->
     ]
     styleWithSpan: false
 
-Template.jobsNew.events
+Template.jobsNewContent.events
 
   'click .btn-save': (event, template) ->
     title = template.$("#title")
@@ -48,3 +48,7 @@ Template.jobsNew.events
 
   'focus :input': (event, template) ->
     $(event.target).closest(".form-group").removeClass 'has-error'
+
+Template.jobsNewForbidden.events
+  "click .btn-linkedin": (event, template) ->
+    Meteor.loginWithLinkedIn()
