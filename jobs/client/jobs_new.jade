@@ -24,19 +24,23 @@ template(name="jobsNewContent")
           form        
 
             .form-group
-              label.control-label(for='title') Título da Vaga
-              i.fa.fa-asterisk
+              label.control-label(for='title') 
+                | Título da Vaga
+                i.fa.fa-asterisk
               input.form-control(id="title" type='text')
                 
             .form-group
-              label.control-label(for='term') Tipo
-              i.fa.fa-asterisk
+              label.control-label(for='term') 
+                | Tipo
+                i.fa.fa-asterisk
               select.form-control(id="term")
                 option
                 option
                   | Full Time
                 option
                   | Estágio
+                option
+                  | Freela
                 option
                   | Por Hora
                 option
@@ -45,11 +49,21 @@ template(name="jobsNewContent")
                   | Voluntário
                 
             .form-group
-              label.control-label(for='company') Empresa
+              label.control-label(for='company') 
+                | Empresa
+                i.fa.fa-asterisk
               input.form-control(id="company" type='text')
+                
+            .form-group
+              label.control-label(for='email') 
+                | Email para contato
+                i.fa.fa-asterisk
+              input.form-control(id="email" type='text')
             
             .form-group
-              label.control-label(for='company') Descrição
+              label.control-label(for='company') 
+                | Descrição da vaga
+                i.fa.fa-asterisk
               .summernote(id="description")
         
         .panel-footer.clearfix

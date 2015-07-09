@@ -17,3 +17,6 @@ summernote:summernote
 mizzao:bootboxjs
 duongthienduc:meteor-bootstrap-growl
 pauli:accounts-linkedin
+momentjs:moment
+rzymek:moment-locale-pt-br
+msavin:mongol
