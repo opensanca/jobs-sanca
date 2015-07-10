@@ -14,11 +14,13 @@ Todo:
 - [x] Setup inicial do projeto
 - [x] Começar uma Todo List
 - [X] Controle de acesso via LinkedIn
-- [ ] Editar e Remover posts
-- [ ] Expirar posts depois de um tempo
+- [X] Editar e Remover posts
+- [ ] Votação (e ordenar por votação)
 - [ ] Usuários com roles para moderar posts
+- [ ] Expirar posts depois de um tempo
+  - [ ] Enviar email de alerta para anunciante
+  - [ ] Renovar o tempo
 - [ ] Busca
-- [ ] Votação
 - [ ] Perfis de profissionais
 - [ ] Mapas
 - [ ] Terminar a Todo List
