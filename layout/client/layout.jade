@@ -3,9 +3,10 @@ template(name="loading")
     img(src="/img/loading.gif")
 
 template(name="navbar")
-  .navbar.navbar-default.navbar-fixed-top(role='navigation')
+  .navbar.navbar-default(role='navigation')
     .container
-      a.navbar-brand(title='jobs-sanca', href='/') Jobs Sanca
+      a.navbar-brand(title='jobs-sanca', href='/')
+        img.img-navbar(src="/img/logo-header.png" alt="logo")
       ul.nav.navbar-nav
         li
           a(href='/jobs')
@@ -16,11 +17,10 @@ template(name="navbar")
             i.fa.fa-fw.fa-bullhorn
             |  Anunciar Vaga
       ul.nav.navbar-nav.navbar-right
-        li
-        li
-          if currentUser
-            a.dropdown(href='#' data-toggle='dropdown')
-              img.profile-image.img-circle(src="{{currentUser.profile.pictureUrl}}")
+        if currentUser
+          li.dropdown
+            a.dropdown-toggle(href='#' data-toggle='dropdown')
+              img.img-navbar.img-circle(src="{{currentUser.profile.pictureUrl}}")
               | {{currentUser.profile.firstName}} {{currentUser.profile.lastName}}
               span.caret
             ul.dropdown-menu
@@ -28,10 +28,11 @@ template(name="navbar")
                 a.btn-logout(href='#') 
                   i.fa.fa-fw.fa-sign-out
                   | Sair
-          else
+        else
+          li
             .navbar-btn
-              a.btn.btn-default.btn-linkedin(href='#')
-                i.fa.fa-fw.fa-linkedin
+              a.btn.btn-primary.btn-linkedin(href='#')
+                i.fa.fa-fw.fa-linkedin-square
                 |  Entrar usando LinkedIn
             
 template(name="layout")

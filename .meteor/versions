@@ -56,15 +56,12 @@ mquandalle:jade@0.4.3
 mquandalle:jade-compiler@0.4.3
 mquandalle:stylus@1.1.1
 msavin:mongol@1.0.102
-nemo64:bootstrap@3.3.5_1
-nemo64:bootstrap-data@3.3.5
 oauth@1.1.4
 oauth2@1.1.3
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 pauli:accounts-linkedin@1.1.2
 pauli:linkedin@1.1.2
-pcuci:bootcards@1.0.0_6
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
