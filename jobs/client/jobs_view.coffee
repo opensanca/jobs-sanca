@@ -16,7 +16,9 @@ Template.jobsViewContent.helpers
     Meteor.users.findOne(@userId)
 
   fromNow: ->
-    moment.locale('pt-br')
     moment(@createdAt).fromNow()
+
+  belongsToUser: ->
+    ((Meteor.userId() is @userId))
 
 Template.jobsViewContent.events

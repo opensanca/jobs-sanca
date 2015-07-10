@@ -17,3 +17,6 @@ Template.jobsContent.helpers
   fromNow: ->
     moment.locale('pt-br')
     moment(@createdAt).fromNow()
+
+  belongsToUser: ->
+    ((Meteor.userId() is @userId))

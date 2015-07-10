@@ -1,0 +1,52 @@
+template(name="jobsForm")
+  .row
+    .col-sm-6.col-sm-offset-3
+      .panel.panel-default
+        .panel-heading.clearfix
+          h3.panel-title.pull-left
+            | {{formTitle}}
+        .modal-body
+          form
+            .form-group
+              label.control-label(for='title') 
+                | Título da Vaga
+                i.fa.fa-asterisk
+              input.form-control(id="title" type='text' value='{{data.title}}')
+                
+            .form-group
+              label.control-label(for='term') 
+                | Tipo
+                i.fa.fa-asterisk
+              select.form-control(id="term")
+                option
+                each terms
+                  if isEqual this ../data.term
+                    option(selected="selected")
+                      | {{this}}
+                  else
+                    option
+                      | {{this}}
+                      
+            .form-group
+              label.control-label(for='company') 
+                | Empresa
+                i.fa.fa-asterisk
+              input.form-control(id="company" type='text' value='{{data.company}}')
+                
+            .form-group
+              label.control-label(for='email') 
+                | Email para contato
+                i.fa.fa-asterisk
+              input.form-control(id="email" type='text' value='{{data.email}}')
+            
+            .form-group
+              label.control-label(for='company') 
+                | Descrição da vaga
+                i.fa.fa-asterisk
+              .summernote(id="description")
+                | {{{data.description}}}
+
+        .panel-footer.clearfix
+          if enableRemove
+            input.btn.btn-danger.btn-remove.pull-left(type="button" value="Remover")
+          input.btn.btn-primary.btn-save.pull-right(type="submit" value="Salvar")

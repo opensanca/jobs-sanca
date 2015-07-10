@@ -17,10 +17,15 @@ template(name="jobsContent")
         h4.list-group-item-heading
           a(href="/jobs/view/{{_id}}")
             | {{title}}
+          if belongsToUser
+            a.btn.btn-link.btn-xs(href="/jobs/edit/{{_id}}")
+              i.fa.fa-edit
+              | Editar            
         p
           i.fa.fa-fw.fa-building 
           | {{company}}
       .panel-footer.text-right
+
         img.img-avatar.img-circle.pull-right(src="{{author.profile.pictureUrl}}")
         p.list-group-item-text
           strong {{author.profile.firstName}} {{author.profile.lastName}}

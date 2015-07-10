@@ -1,0 +1,28 @@
+template(name="jobsEdit")
+  if Template.subscriptionsReady
+    with job
+      +jobsEditContent
+    else
+      +jobsEditNotFound
+  else
+    +loading
+  
+template(name="jobsEditContent")
+  if belongsToUser
+    +jobsForm formTitle="Editar Vaga" enableRemove=true data=this
+  else
+    +jobsEditForbidden
+
+template(name="jobsEditForbidden")
+  .well.text-center
+    p
+      | Você não tem permissão para editar esse anúncio
+    unless currentUser
+      a.btn.btn-lg.btn-primary.btn-linkedin(href="#")
+        i.fa.fa-fw.fa-linkedin-square
+        |  Entrar usando LinkedIn
+
+template(name="jobsEditNotFound")
+  .well.text-center
+    p
+      | Vaga não disponível

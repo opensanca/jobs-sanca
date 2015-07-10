@@ -5,3 +5,6 @@ Template.navbar.events
 
   "click .btn-logout": (event, template) ->
     Meteor.logout()
+
+Template.registerHelper "isEqual", (a, b) ->
+  _.isEqual a, b

@@ -1,8 +1,3 @@
-template(name="jobsViewNotFound")
-  .well.text-center
-    p
-      | Vaga não disponível
-      
 template(name="jobsView")
   if Template.subscriptionsReady
     with job
@@ -19,6 +14,10 @@ template(name="jobsViewContent")
         .modal-body
           h2
             | {{title}}
+            if belongsToUser
+              a.btn.btn-link.btn-xs(href="/jobs/edit/{{_id}}")
+                i.fa.fa-edit
+                | Editar
           p
             i.fa.fa-fw.fa-building 
             | {{company}}
@@ -45,3 +44,8 @@ template(name="jobsViewContent")
             strong {{author.profile.firstName}} {{author.profile.lastName}}
           p.list-group-item-text
             | {{fromNow}}
+
+template(name="jobsViewNotFound")
+  .well.text-center
+    p
+      | Vaga não disponível
