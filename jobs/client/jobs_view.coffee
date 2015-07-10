@@ -1,12 +1,12 @@
 Router.route '/jobs/view/:id', ->
   @layout 'layout'
-  @subscribe 'job', @params.id
   @render 'jobsView', data:
     id: @params.id
 
+Template.jobsView.onCreated ->
+  @subscribe 'job', @data.id
 
 Template.jobsView.helpers
-
   job: ->
     Jobs.findOne(@id)
 

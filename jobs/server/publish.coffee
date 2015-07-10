@@ -1,5 +1,4 @@
 Meteor.publish 'jobs', ->
-  #Meteor._sleepForMs(2000)
   @relations
       collection: Jobs
       options:
@@ -22,10 +21,8 @@ Meteor.publish 'jobs', ->
 
 
 Meteor.publish 'job', (id) ->
-  #Meteor._sleepForMs(2000)
   [
     Jobs.find {_id: id},
-      fields:
         title: 1
         description: 1
         email: 1

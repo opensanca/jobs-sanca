@@ -1,9 +1,12 @@
 Router.route '/jobs', ->
   @layout 'layout'
   @render 'jobs'
+
+
+Template.jobs.onCreated ->
   @subscribe 'jobs'
 
-Template.jobs.helpers
+Template.jobsContent.helpers
 
   jobs: ->
     Jobs.find({} , {sort: {createdAt: -1}})

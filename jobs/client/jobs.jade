@@ -3,25 +3,30 @@ template(name="jobs")
     .col-sm-12
       h3
         | Vagas Disponíveis em São Carlos
-      each jobs
-        .panel.panel-default
-          
-          .modal-body
-            .label.label-default.pull-right
-              strong {{term}}
-            h4.list-group-item-heading
-              a(href="/jobs/view/{{_id}}")
-                | {{title}}
-            p
-              i.fa.fa-fw.fa-building 
-              | {{company}}
-          .panel-footer.text-right
-            img.img-avatar.img-circle.pull-right(src="{{author.profile.pictureUrl}}")
-            p.list-group-item-text
-              strong {{author.profile.firstName}} {{author.profile.lastName}}
-            p.list-group-item-text
-              | {{fromNow}}
-
+      if Template.subscriptionsReady
+        +jobsContent
       else
-        .well
-          | Nenhuma vaga aberta no momento
+        +loading
+
+template(name="jobsContent")
+  each jobs
+    .panel.panel-default
+      .modal-body
+        .label.label-default.pull-right
+          strong {{term}}
+        h4.list-group-item-heading
+          a(href="/jobs/view/{{_id}}")
+            | {{title}}
+        p
+          i.fa.fa-fw.fa-building 
+          | {{company}}
+      .panel-footer.text-right
+        img.img-avatar.img-circle.pull-right(src="{{author.profile.pictureUrl}}")
+        p.list-group-item-text
+          strong {{author.profile.firstName}} {{author.profile.lastName}}
+        p.list-group-item-text
+          | {{fromNow}}
+
+  else
+    .well
+      | Nenhuma vaga aberta no momento

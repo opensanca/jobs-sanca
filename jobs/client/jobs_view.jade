@@ -4,10 +4,13 @@ template(name="jobsViewNotFound")
       | Vaga não disponível
       
 template(name="jobsView")
-  with job
-    +jobsViewContent
+  if Template.subscriptionsReady
+    with job
+      +jobsViewContent
+    else
+      +jobsViewNotFound
   else
-    +jobsViewNotFound
+    +loading
   
 template(name="jobsViewContent")
   .row
@@ -25,11 +28,17 @@ template(name="jobsViewContent")
               .label.label-default
                 strong {{term}}
               hr
-              a.btn.btn-default.btn-lg.btn-block(href="mailto:{{email}}?subject=[Jobs Sanca] Novo cadidato para '{{title}}'&body=Escreva suas qualificações para a vaga '{{title}}'.%0A%0ARecomendamos que anexe um CV.%0A%0ABoa sorte!")
-                i.fa.fa-envelope
-                | Candidatar-se
+              if Template.subscriptionsReady
+                a.btn.btn-default.btn-lg.btn-block(href="mailto:{{email}}?subject=[Jobs Sanca] Novo cadidato para '{{title}}'&body=Escreva suas qualificações para a vaga '{{title}}'.%0A%0ARecomendamos que anexe um CV.%0A%0ABoa sorte!")
+                  i.fa.fa-envelope
+                  | Candidatar-se
+              else
+                +loading
             .col-sm-9
-              | {{{description}}}
+              if Template.subscriptionsReady
+                | {{{description}}}
+              else
+                +loading
         .panel-footer.text-right
           img.img-avatar.img-circle.pull-right(src="{{author.profile.pictureUrl}}")
           p.list-group-item-text
