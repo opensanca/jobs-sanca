@@ -2,7 +2,7 @@
 
 Aplicação que vai ser feita  para que empresas e desenvolvedores possam encontrar e divulgar vagas de emprego.
 
-Deploy em: http://jobs-sanca.meteor.com/jobs
+Deploy em: http://jobs.opensanca.com/
 
 MeteorJS
 
